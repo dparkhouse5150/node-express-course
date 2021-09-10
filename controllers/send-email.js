@@ -16,7 +16,7 @@ const sendEmailthereal = async (req, res) => {
     let info = await transporter.sendMail({
         from: 'me <my email>',
         to: 'person email',
-        subject: 'basic subject'
+        subject: 'basic subject',
         html: 'string or component'
     })
 
