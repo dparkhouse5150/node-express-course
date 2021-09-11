@@ -16,6 +16,9 @@ app.use(errorHandlerMiddleware)
 
 const port = process.env.PORT || 5000
 
+/**
+ * connect to the database. using mongodb
+ */
 const start = async () => {
     try {
         await connectDb(process.env.MONGO_URI)
@@ -26,3 +29,12 @@ const start = async () => {
 }
 
 start()
+
+const searchById = async () => {
+    try {
+        let User = new User();
+        
+    } catch (err) {
+        console.log(err)
+    }
+}
