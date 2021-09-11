@@ -22,7 +22,7 @@ const port = process.env.PORT || 5000
 const start = async () => {
     try {
         await connectDb(process.env.MONGO_URI)
-        app.listen(port, console.log(`serfer is listening on por ${port}`))
+        app.listen(port, console.log(`serfer is listening on port ${port}`))
     } catch (err) {
         console.log(err)
     }
@@ -30,11 +30,25 @@ const start = async () => {
 
 start()
 
-const searchById = async () => {
+const searchUserById = async () => {
     try {
-        let User = new User();
-        
+        const user = User.findOne({ _id: req.body.id })
+
+        if (!user) {
+
+        }
+
     } catch (err) {
         console.log(err)
     }
+}
+
+const searchByVideoName = async () => {}
+
+
+
+module.exports = {
+    start,
+    searchUserById,
+    searchByVideoName,
 }
